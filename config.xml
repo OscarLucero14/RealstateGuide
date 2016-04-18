@@ -4,11 +4,11 @@
 <widget xmlns     = "http://www.w3.org/ns/widgets"
         xmlns:gap = "http://phonegap.com/ns/1.0"
         id        = "com.phonegap.helloworld"
-        versionCode= "4"
+        versionCode= "2"
 		version   = "0.0.1">
-    <name>Colombia</name>
+    <name>RealEstateGuide</name>
     <description>
-        This app allow us to know more about the most important cities of Colombia.
+        This app allow us to search for the perfect house and price in thw region.
     </description>
     <author href="http://phonegap.com" email="oscarolc@gmail.com">
         Oscar Lucero
@@ -63,12 +63,12 @@
 
     <!-- Define app icon for each platform. -->
     <icon src="icon.png" />
-    <icon src="images/col.png"   gap:platform="android"    gap:qualifier="ldpi" />
-    <icon src="images/col.png"   gap:platform="android"    gap:qualifier="mdpi" />
-    <icon src="images/col.png"   gap:platform="android"    gap:qualifier="hdpi" />
-    <icon src="images/col.png"  gap:platform="android"    gap:qualifier="xhdpi" />
-    <icon src="images/col.png"     gap:platform="blackberry" />
-    <icon src="images/col.png"     gap:platform="blackberry" gap:state="hover"/>
+    <icon src="images/rs.png"   gap:platform="android"    gap:qualifier="ldpi" />
+    <icon src="images/rs.png"   gap:platform="android"    gap:qualifier="mdpi" />
+    <icon src="images/rs.png"   gap:platform="android"    gap:qualifier="hdpi" />
+    <icon src="images/rs.png"  gap:platform="android"    gap:qualifier="xhdpi" />
+    <icon src="images/rs.png"     gap:platform="blackberry" />
+    <icon src="images/rs.png"     gap:platform="blackberry" gap:state="hover"/>
     <icon src="res/icon/ios/icon-57.png"            gap:platform="ios"        width="57" height="57" />
     <icon src="res/icon/ios/icon-72.png"            gap:platform="ios"        width="72" height="72" />
     <icon src="res/icon/ios/icon-57-2x.png"         gap:platform="ios"        width="114" height="114" />
