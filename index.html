@@ -13,59 +13,79 @@
 	<script src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
 	<script src="http://code.jquery.com/mobile/1.3.0/jquery.mobile-1.3.0.min.js"></script>
     <script type="text/javascript" src="lib/.ui.min.js"></script>
+    <!------=========================================================================---->
+
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.5/jquery-ui.min.js"></script>
 
 
+
+    <script type="text/javascript">
+
+
+	function Slider(){
+
+		$(".slider img #1").show("fade",500);
+		$(".slider img #1").delay(5500).hide("slide", {direction:'left'},500);
+
+		var sc=$(".slider img").size();
+		var count=2;
+
+		setInterval(function(){
+		$(".slider #"+count).show("slide",{direction:'right'},500);
+		$(".slider #"+count).delay(5500).hide("slide",{direction:'left'},500);
+		if(count==sc){
+			count=1;
+		}
+		else{
+			count=count+1;
+			}
+
+		},6500);
+
+	}
+
+    </script>
 
 </head>
-<body>
+<body onload="initialize();">
 <!-- ========================================= home page ======================================-->
     <div data-role="page" id=home>
         <div data-role="header" data-position="fixed" data-theme="b">
-            <h1>Real State & Apartments</h1>
+            <h1>Real Estate Guide</h1>
         </div>
-        <div data-role="content">
+        <div data-role="content" class="ui-content">
 
                 <ul data-role="listview">
-                    <li><a href="#city1" data-transition="slide">
-                          <img src="images/house.jpg" alt="Bogota City"></img>
-                          <h3><b>346 Northlake Drive</b></h3>
-                          <p class="about">Waterloo 4 beds, 3 baths</p>
+                    <li><a href="#house1" id="one" data-transition="slide" onclick="Slider();">
+                          <img src="images/house1.jpg/" alt="House1"></img>
+                          <h3><b>$478.500</b></h3>
+                            <p class="about">346 Northlake Drive </br>Waterloo, ON N1V 2R9 </p>
+                        </a>
+
+                    </li>
+                    <li id="two"><a href="#house2" data-transition="slide" onclick="Slider();">
+                          <img src="images/house2.jpg" alt="House2"></img>
+                          <h3><b>$649,900.00</b></h3>
+                            <p class="about">626 RED PINE Drive</br>Waterloo, ON N2V 1R9</p>
                         </a>
                     </li>
-                    <li><a href="#city2" data-transition="slide">
-                          <img src="images/house2.jpg" alt="Bogota City"></img>
-                          <h3><b>Medellin</b></h3>
-                          <p class="about">It's the second largest city in Colombia</p>
+                    <li id="three"><a href="#house3" data-transition="slide" onclick="Slider();">
+                          <img src="images/house3.jpg" alt="House3"></img>
+                          <h3><b>$619,900.00</b></h3>
+                            <p class="about">531 Buckingham Boulevard</br>Waterloo, ON N2T 2T9 </p>
                         </a>
                     </li>
-                    <li><a href="#city3" data-transition="slide">
-                          <img src="images/cali1.jpg" alt="Bogota City"></img>
-                          <h3><b>Cali</b></h3>
-                          <p class="about">The world capital of salsa music and the sweet cane crops</p>
+                    <li id="four"><a href="#house4" data-transition="slide" onclick="Slider();">
+                          <img src="images/house4.jpg" alt="House4"></img>
+                          <h3><b>$669,000.00</b></h3>
+                            <p class="about">288 FERNDALE Place,</br>Waterloo, ON N2J 3X9</p>
                         </a>
                     </li>
-                    <li><a href="#city4" data-transition="slide">
-                          <img src="images/cartagena.jpg" alt="Bogota City"></img>
-                          <h3><b>Cartagena</b></h3>
-                          <p class="about">A gorgeous fishing village on Colombia's Caribbean coast</p>
-                        </a>
-                    </li>
-                    <li><a href="#city5" data-transition="slide">
-                          <img src="images/cafePark.jpg" alt="Bogota City"></img>
-                          <h3><b>The Coffee Region</b></h3>
-                          <p class="about">It's famous for growing and production of a majority of the Colombian coffee</p>
-                        </a>
-                    </li>
-                    <li><a href="#city6" data-transition="slide">
-                          <img src="images/sanAndresIsl.jpg" alt="Bogota City"></img>
-                          <h3><b>San Andres Island</b></h3>
-                          <p class="about">It's a Colombian coral island in the Caribbean Sea</p>
-                        </a>
-                    </li>
-                    <li><a href="#city7" data-transition="slide">
-                          <img src="images/amazonRiver.jpg" alt="Bogota City"></img>
-                          <h3><b>Amazon Region</b></h3>
-                          <p class="about">The Amazon region has one of the most biodiverse ecosystems in the world</p>
+                    <li id="five"><a href="#house5" data-transition="slide" onclick="Slider();">
+                          <img src="images/house5.jpg" alt="House5"></img>
+                          <h3><b>$359,900.000</b></h3>
+                            <p class="about">141 Elgin Crescent,</br>Waterloo, ON N2J 2S5 </p>
                         </a>
                     </li>
                 </ul>
@@ -75,7 +95,7 @@
             <div data-role="navbar">
                 <ul>
                     <li><a href="#home" data-icon="home">Home</a></li>
-                    <li><a href="#location" data-icon="info">Location</a></li>
+                    <li><a href="location.html" data-icon="info">Location</a></li>
 
                 </ul>
             </div>
@@ -85,196 +105,186 @@
 
 <!--  =========================================second page ======================================-->
 
-   <div data-role="page" id="city1" data-add-back-btn="true" data-back-btn-text="Home">
-        <div data-role="header" data-position="fixed" data-theme="b">
-            <h1>Home 1</h1>
+<div data-role="page" id="house1" >
+    <div data-role="header" data-position="fixed" data-theme="b" >
+        <a href="#home" data-icon="back" data-iconpos="notext" ></a>
+        <h1>House 1</h1>
+    </div>
+
+  <div data-role="content" class="ui-content">
+            <table>
+                <tr><td rowspan="3"><img src="images/house1.jpg" class="tdImage"></td><td><h3>Home adress</h3></td></tr>
+                <tr><td class="tdName">The National Capital, the largest and most populated city</td></tr>
+                <tr><td class="tdPopulation">Weather: 19°C. Pop: 6.763 mill.</td></tr>
+            </table>
+        <h5 style="text-align:center; margin:2px; font-weight:bold;">Description</h5>
+        <p class="descript">Bogotá, the capital of Colombia, located in the center of the country on a vast plain at 2,600 meters above sea level and with a moderate temperature has a population of eight million people from all corners of Colombia; a city as diverse as the entire country. Bogotá has a varied nightlife offering domestic and foreign tourists alike different options and styles.</p>
+         <h5 style="text-align:center; margin:2px;">Gallery</h5>
+            <div class="form_container">
+                <div class="slider">
+                <img id="1" src="images/house1/picture1.jpg" border="0" alt="house1"/>
+                <img id="2" src="images/house1/picture2.jpg" border="0" alt="house1"/>
+                <img id="3" src="images/house1/picture3.jpg" border="0" alt="house"/>
+                <img id="4" src="images/house1/picture4.jpg." border="0" alt="house"/>
+                <img id="5 " src="images/house1/picture5.jpg." border="0" alt="house"/>
+            </div>
         </div>
-        <div data-role="content">
-                <table>
-                    <tr><td rowspan="3"><img src="images/bogota.png" class="tdImage"></td><td><h3>Home adress</h3></td></tr>
-                    <tr><td class="tdName">The National Capital, the largest and most populated city</td></tr>
-                    <tr><td class="tdPopulation">Weather: 19°C. Pop: 6.763 mill.</td></tr>
-                </table>
 
-            <p><h4 style="text-align:center;">Description</h4></p>
-            <p class="descript">Bogotá, the capital of Colombia, located in the center of the country on a vast plain at 2,600 meters above sea level and with a moderate temperature has a population of eight million people from all corners of Colombia; a city as diverse as the entire country. Bogotá has a varied nightlife offering domestic and foreign tourists alike different options and styles.</p>
-            <p><h4 style="text-align:center;">Gallery</h4></p>
-
-
+    </div>
+    <div data-role="footer" data-position="fixed"  data-theme="b" data-id="fixedFooter">
+        <div data-role="navbar">
             <ul>
-                <li><a href="#picture1" id="picture1" data-transition="slide"><img src="images/house.jpg" alt="picture1"></img></a></li>
-                <li><a href="#picture2" id="picture2" data-transition="slide"><img src="images/house.jpg" alt="picture2"></img></a></li>
-                <li><a href="#picture3" id="picture3" data-transition="slide"><img src="images/house.jpg" alt="picture3"></img></a></li>
-
+                <li><a href="#home" data-icon="home">Home</a></li>
+                <li><a href="location.html" data-icon="info">Location</a></li>
             </ul>
-
         </div>
-        <div data-role="footer" data-position="fixed"  data-theme="b" data-id="fixedFooter">
-            <div data-role="navbar">
-                <ul>
-                    <li><a href="#home" data-icon="home">Home</a></li>
-                    <li><a href="#location" data-icon="info">Location</a></li>
+    </div>
+</div>
 
-                </ul>
+<div data-role="page" id="house2" >
+    <div data-role="header" data-position="fixed" data-theme="b" >
+        <a href="#home" data-icon="back" data-iconpos="notext" ></a>
+        <h1>House 2</h1>
+    </div>
+
+  <div data-role="content" class="ui-content">
+            <table>
+                <tr><td rowspan="3"><img src="images/house2.jpg" class="tdImage"></td><td><h3>Home adress</h3></td></tr>
+                <tr><td class="tdName">The National Capital, the largest and most populated city</td></tr>
+                <tr><td class="tdPopulation">Weather: 19°C. Pop: 6.763 mill.</td></tr>
+            </table>
+        <h5 style="text-align:center; margin:2px; font-weight:bold;">Description</h5>
+        <p class="descript">Bogotá, the capital of Colombia, located in the center of the country on a vast plain at 2,600 meters above sea level and with a moderate temperature has a population of eight million people from all corners of Colombia; a city as diverse as the entire country. Bogotá has a varied nightlife offering domestic and foreign tourists alike different options and styles.</p>
+         <h5 style="text-align:center; margin:2px;">Gallery</h5>
+            <div class="form_container">
+                <div class="slider2">
+                <img id="1" src="images/house2/picture1.jpg" border="0" alt="house1"/>
+                <img id="2" src="images/house2/picture2.jpg" border="0" alt="house1"/>
+                <img id="3" src="images/house2/picture3.jpg" border="0" alt="house"/>
+                <img id="4" src="images/house2/picture4.jpg." border="0" alt="house"/>
+                <img id="5" src="images/house2/picture5.jpg." border="0" alt="house"/>
             </div>
         </div>
-   </div>
-   <div data-role="page" id="city2" data-add-back-btn="true" data-back-btn-text="Home">
-        <div data-role="header" data-position="fixed" data-theme="b">
-            <h1>Medellin</h1>
+
+    </div>
+    <div data-role="footer" data-position="fixed"  data-theme="b" data-id="fixedFooter">
+        <div data-role="navbar">
+            <ul>
+                <li><a href="#home" data-icon="home">Home</a></li>
+                <li><a href="location.html" data-icon="info">Location</a></li>
+            </ul>
         </div>
-        <div data-role="content">
-                <table>
-                    <tr><td rowspan="3"><img src="images/medellin.jpg" class="tdImage"></td><td><h3>Medellin</h3></td></tr>
-                    <tr><td class="tdName">It is the second largest city in Colombia</td></tr>
-                    <tr><td class="tdPopulation">Weather: 32°C. Pop: 2.184 mill.</td></tr>
-                </table>
+    </div>
+</div>
 
-            <p><h4>DESCRIPTION</h4></p>
-            <p class="descript">Medellín is the capital of Colombia’s mountainous Antioquia province. Nicknamed the “City of Eternal Spring” for its temperate weather, it hosts a famous annual Flower Festival. Modern metrocables link the city to surrounding barrios and offer sweeping views of the Aburrá Valley below. Sculptures by Fernando Botero decorate downtown's Botero Plaza, while the Museo de Antioquia displays more of the Colombian artist’s work.</p>
-            <a href="https://www.youtube.com/watch?v=kZrHIWrasA0" data-role="button" rel="external">VISIT WEBSITE</a>
+<div data-role="page" id="house3" >
+    <div data-role="header" data-position="fixed" data-theme="b" >
+        <a href="#home" data-icon="back" data-iconpos="notext" ></a>
+        <h1>House 1</h1>
+    </div>
 
-        </div>
-        <div data-role="footer" data-position="fixed" data-id="fixedFooter" data-theme="b">
-            <div data-role="navbar">
-                <ul>
-                    <li><a href="#home" data-icon="home">Home</a></li>
-                    <li><a href="#location" data-icon="info">Location</a></li>
-
-                </ul>
+  <div data-role="content" class="ui-content">
+            <table>
+                <tr><td rowspan="3"><img src="images/house3.jpg" class="tdImage"></td><td><h3>Home adress</h3></td></tr>
+                <tr><td class="tdName">The National Capital, the largest and most populated city</td></tr>
+                <tr><td class="tdPopulation">Weather: 19°C. Pop: 6.763 mill.</td></tr>
+            </table>
+        <h5 style="text-align:center; margin:2px; font-weight:bold;">Description</h5>
+        <p class="descript">Bogotá, the capital of Colombia, located in the center of the country on a vast plain at 2,600 meters above sea level and with a moderate temperature has a population of eight million people from all corners of Colombia; a city as diverse as the entire country. Bogotá has a varied nightlife offering domestic and foreign tourists alike different options and styles.</p>
+         <h5 style="text-align:center; margin:2px;">Gallery</h5>
+            <div class="form_container">
+                <div class="slider3">
+                <img id="1" src="images/house3/picture1.jpg" border="0" alt="house"/>
+                <img id="2" src="images/house3/picture1.jpg" border="0" alt="house1"/>
+                <img id="3" src="images/house3/picture3.jpg" border="0" alt="house"/>
+                <img id="4" src="images/house3/picture4.jpg." border="0" alt="house"/>
+                <img id="5" src="images/house3/picture5.jpg." border="0" alt="house"/>
             </div>
         </div>
-   </div>
-   <div data-role="page" id="city3" data-add-back-btn="true" data-back-btn-text="Home">
-        <div data-role="header" data-position="fixed" data-theme="b">
-            <h1>Cali</h1>
+
+    </div>
+    <div data-role="footer" data-position="fixed"  data-theme="b" data-id="fixedFooter">
+        <div data-role="navbar">
+            <ul>
+                <li><a href="#home" data-icon="home">Home</a></li>
+                <li><a href="location.html" data-icon="info">Location</a></li>
+            </ul>
         </div>
-        <div data-role="content">
-                <table>
-                    <tr><td rowspan="3"><img src="images/cali1.jpg" class="tdImage"></td><td><h3>Cali</h3></td></tr>
-                    <tr><td class="tdName">The world capital of salsa music and the sweet cane crops</td></tr>
-                    <tr><td class="tdPopulation">Weather: 25°C. Pop: 2.045 mill.</td></tr>
-                </table>
+    </div>
+</div>
 
-            <p><h4>DESCRIPTION</h4></p>
-            <p class="descript">The Colombian city of Cali, known as the world capital of salsa, also serves as the urban center of the country's Afro-Pacific culture. Host Jacob Edgar discovers why Columbia adopted as its native style the upbeat tropical dance music of salsa. Cali is the kind of place that provides all the substance. It's a hot, gritty city with a passion for life that draws you in and stays with you long after you leave town.</p>
-            <a href="https://www.youtube.com/watch?v=268JDJQn6_w" data-role="button" rel="external">VISIT WEBSITE</a>
+<div data-role="page" id="house4" >
+    <div data-role="header" data-position="fixed" data-theme="b" >
+        <a href="#home" data-icon="back" data-iconpos="notext" ></a>
+        <h1>House 1</h1>
+    </div>
 
-        </div>
-        <div data-role="footer" data-position="fixed" data-id="fixedFooter" data-theme="b">
-            <div data-role="navbar">
-                <ul>
-                    <li><a href="#home" data-icon="home">Home</a></li>
-                    <li><a href="#location" data-icon="info">Location</a></li>
-
-                </ul>
+  <div data-role="content" class="ui-content">
+            <table>
+                <tr><td rowspan="3"><img src="images/house4.jpg" class="tdImage"></td><td><h3>Home adress</h3></td></tr>
+                <tr><td class="tdName">The National Capital, the largest and most populated city</td></tr>
+                <tr><td class="tdPopulation">Weather: 19°C. Pop: 6.763 mill.</td></tr>
+            </table>
+        <h5 style="text-align:center; margin:2px; font-weight:bold;">Description</h5>
+        <p class="descript">Bogotá, the capital of Colombia, located in the center of the country on a vast plain at 2,600 meters above sea level and with a moderate temperature has a population of eight million people from all corners of Colombia; a city as diverse as the entire country. Bogotá has a varied nightlife offering domestic and foreign tourists alike different options and styles.</p>
+         <h5 style="text-align:center; margin:2px;">Gallery</h5>
+            <div class="form_container">
+                <div class="slider4">
+                <img id="1" src="images/house4/picture1.jpg" border="0" alt="house"/>
+                <img id="2" src="images/house4/picture1.jpg" border="0" alt="house1"/>
+                <img id="3" src="images/house4/picture3.jpg" border="0" alt="house"/>
+                <img id="4" src="images/house4/picture4.jpg." border="0" alt="house"/>
+                <img id="5" src="images/house4/picture5.jpg." border="0" alt="house"/>
             </div>
         </div>
-   </div>
-   <div data-role="page" id="city4" data-add-back-btn="true" data-back-btn-text="Home">
-        <div data-role="header" data-position="fixed" data-theme="b">
-            <h1>Cartagena</h1>
+
+    </div>
+    <div data-role="footer" data-position="fixed"  data-theme="b" data-id="fixedFooter">
+        <div data-role="navbar">
+            <ul>
+                <li><a href="#home" data-icon="home">Home</a></li>
+                <li><a href="location.html" data-icon="info">Location</a></li>
+            </ul>
         </div>
-        <div data-role="content">
-                <table>
-                    <tr><td rowspan="3"><img src="images/bogota.png" class="tdImage"></td><td><h3>Cartagena</h3></td></tr>
-                    <tr><td class="tdName">A gorgeous fishing village on Colombia's Caribbean coast, has excellent beaches, a historic old town</td></tr>
-                    <tr><td class="tdPopulation">Weather: 30°C. Pop 1.075 mill.</td></tr>
-                </table>
+    </div>
+</div>
 
-            <p><h4>DESCRIPTION</h4></p>
-            <p class="descript">Cartagena is a modern port city on Colombia’s Caribbean coast. At its core is the walled Old Town, with 16th-century plazas, cobblestone streets and colorful colonial buildings. With a tropical climate, the city is a popular beach destination. Reachable by boat are the nearby shores of Isla de Barú and Islas del Rosario, known for their coral reefs and scuba diving.</p>
-            <a href="https://www.youtube.com/watch?v=hrUE2IG3JWw" data-role="button" rel="external">VISIT WEBSITE</a>
+<div data-role="page" id="house5" >
+    <div data-role="header" data-position="fixed" data-theme="b" >
+        <a href="#home" data-icon="back" data-iconpos="notext" ></a>
+        <h1>House 1</h1>
+    </div>
 
-        </div>
-        <div data-role="footer" data-position="fixed" data-id="fixedFooter" data-theme="b">
-            <div data-role="navbar">
-                <ul>
-                    <li><a href="#home" data-icon="home">Home</a></li>
-                    <li><a href="#location" data-icon="info">Location</a></li>
-
-                </ul>
+  <div data-role="content" class="ui-content">
+            <table>
+                <tr><td rowspan="3"><img src="images/house5.jpg" class="tdImage"></td><td><h3>Home adress</h3></td></tr>
+                <tr><td class="tdName">The National Capital, the largest and most populated city</td></tr>
+                <tr><td class="tdPopulation">Weather: 19°C. Pop: 6.763 mill.</td></tr>
+            </table>
+        <h5 style="text-align:center; margin:2px; font-weight:bold;">Description</h5>
+        <p class="descript">Bogotá, the capital of Colombia, located in the center of the country on a vast plain at 2,600 meters above sea level and with a moderate temperature has a population of eight million people from all corners of Colombia; a city as diverse as the entire country. Bogotá has a varied nightlife offering domestic and foreign tourists alike different options and styles.</p>
+         <h5 style="text-align:center; margin:2px;">Gallery</h5>
+            <div class="form_container">
+                <div class="slider5">
+                <img id="1" src="images/house5/picture1.jpg" border="0" alt="house"/>
+                <img id="2" src="images/house5/picture2.jpg" border="0" alt="house1"/>
+                <img id="3" src="images/house5/picture3.jpg" border="0" alt="house"/>
+                <img id="4" src="images/house5/picture4.jpg." border="0" alt="house"/>
+                <img id="5" src="images/house5/picture5.jpg." border="0" alt="house"/>
             </div>
         </div>
-   </div>
-   <div data-role="page" id="city5" data-add-back-btn="true" data-back-btn-text="Home">
-        <div data-role="header" data-position="fixed" data-theme="b">
-            <h1>The Coffee Region</h1>
-        </div>
-        <div data-role="content">
-                <table>
-                    <tr><td rowspan="3"><img src="images/cafePark.jpg" class="tdImage"></td><td><h3>The Coffee Region</h3></td></tr>
-                    <tr><td class="tdName"> It includes three departments, Armenia, Manizales and Caldas</td></tr>
-                    <tr><td class="tdPopulation">Weather: 19°C. Pop: 1.58 mill.</td></tr>
-                </table>
 
-            <p><h4>DESCRIPTION</h4></p>
-            <p class="descript">The Colombian coffee Region (Spanish: Eje Cafetero), also known as the Coffee Triangle (Spanish: Triángulo del Café) is a part of the Colombian Paisa region in the rural area of Colombia, famous for growing and production of a majority of the Colombian coffee, considered by some as the best coffee in the world. There are three departments in the area: Caldas, Quindío and Risaralda. The most visited cities are Manizales, Armenia and Pereira.</p>
-            <a href="https://www.youtube.com/watch?v=bFdrev7OWlE" data-role="button" rel="external">VISIT WEBSITE</a>
-
+    </div>
+    <div data-role="footer" data-position="fixed"  data-theme="b" data-id="fixedFooter">
+        <div data-role="navbar">
+            <ul>
+                <li><a href="#home" data-icon="home">Home</a></li>
+                <li><a href="location.html" data-icon="info">Location</a></li>
+            </ul>
         </div>
-        <div data-role="footer" data-position="fixed" data-id="fixedFooter" data-theme="b">
-            <div data-role="navbar">
-                <ul>
-                    <li><a href="#home" data-icon="home">Home</a></li>
-                    <li><a href="#location" data-icon="Location">Info</a></li>
+    </div>
+</div>
 
-                </ul>
-            </div>
-        </div>
-   </div>
-   <div data-role="page" id="city6" data-add-back-btn="true" data-back-btn-text="Home">
-        <div data-role="header" data-position="fixed" data-theme="b">
-            <h1>San Andres Island</h1>
-        </div>
-        <div data-role="content">
-                <table>
-                    <tr><td rowspan="3"><img src="images/sanAndresIsl.jpg" class="tdImage"></td><td><h3>San Andres Island</h3></td></tr>
-                    <tr><td class="tdName">It is a popular tourism destination and diving attraction</td></tr>
-                    <tr><td class="tdPopulation">Weather: 34°C. Pop: 67.912</td></tr>
-                </table>
-
-            <p><h4>DESCRIPTION</h4></p>
-            <p class="descript">It is a popular tourism destination and diving attraction. The island is actually part of the San Andres Archipelago that includes San Andres, Providencia and Santa Catalina. San Andres lies off the northeast coast of Colombia more than 400 miles and sits adjacent to Nicaragua. Colombia gained control over the islands in 1928 as part of the Esguerra-Bárcenas treaty with Nicaragua. The territory has been a hot topic of debate over the last decade as Nicaragua has attempted to regain control over the area through legal protests in international courts.</p>
-            <a href="https://www.youtube.com/watch?v=LWhh6sGzdhA" data-role="button" rel="external">VISIT WEBSITE</a>
-
-        </div>
-        <div data-role="footer" data-position="fixed" data-id="fixedFooter" data-theme="b">
-            <div data-role="navbar">
-                <ul>
-                    <li><a href="#home" data-icon="home">Home</a></li>
-                    <li><a href="#location" data-icon="info">Location</a></li>
-
-                </ul>
-            </div>
-        </div>
-   </div>
-   <div data-role="page" id="city7" data-add-back-btn="true" data-back-btn-text="Home">
-        <div data-role="header" data-position="fixed" data-theme="b">
-            <h1>Amazon Region</h1>
-        </div>
-        <div data-role="content">
-                <table>
-                    <tr><td rowspan="3"><img src="images/amazonRiver.jpg" class="tdImage"></td><td><h3>Amazon Region</h3></td></tr>
-                    <tr><td class="tdName">The National Capital, the largest and most populated city</td></tr>
-                    <tr><td class="tdPopulation">Weather: 28°C. Pop: 500.912</td></tr>
-                </table>
-
-            <p><h4>DESCRIPTION</h4></p>
-            <p class="descript">In Colombia, the Amazon region is formed not only by the Amazonas department in the south east of the country but also by other five departments that share the same type of weather and landscape as the Amazon, which are: Vaupés, Caquetá, Guainía, Guaviare and Putumayo. The high diversity of plants and animal species are found in this area of the country contributes to place Colombia as the most biodiverse country in the world per square meter.</p>
-            <a href="https://www.youtube.com/watch?v=csnZhpt74Zo" data-role="button" rel="external">VISIT WEBSITE</a>
-
-        </div>
-        <div data-role="footer" data-position="fixed" data-id="fixedFooter" data-theme="b">
-            <div data-role="navbar">
-                <ul>
-                    <li><a href="#home" data-icon="home">Home</a></li>
-                    <li><a href="#location" data-icon="info">Location</a></li>
-
-                </ul>
-            </div>
-        </div>
-   </div>
 
 
 
@@ -283,12 +293,11 @@
     <div data-role="header" data-position="fixed" data-theme="b">
             <h1>Location</h1>
     </div>
-    <div data-role="content">
-            <h4 style="text-align:center;">View Address on Map</h4>
+    <div data-role="content" class="ui-content">
+            <h4 style="text-align:center;">Select a Point to View Information</h4>
 
-    <script>
+    <!--<script>
         var myCenter=new google.maps.LatLng(43.502021,-80.556103);
-
         function initialize()
         {
         var mapProp = {
@@ -297,32 +306,34 @@
           panControl:true,
           mapTypeId:google.maps.MapTypeId.HYBRID
           };
-
-        var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
-
+        var map=new google.maps.Map(document.getElementById("map"),mapProp);
         var marker=new google.maps.Marker({
           position:myCenter,
           });
-
         marker.setMap(map);
-
         var infowindow = new google.maps.InfoWindow({
           content:"346 Northlake Drive"+" "+"Waterloo, ON"
           });
-
         google.maps.event.addListener(marker, 'click', function() {
           infowindow.open(map,marker);
           });
         }
-
         google.maps.event.addDomListener(window, 'load', initialize);
 </script>
 
- <center><div id="googleMap" style="width:400px;height:340px;"></div></center>
+var counter=[
+            ['slidera']
+            ['sliderb']
+            ['sliderc']
+            ['sliderd']
+            ['slidere']
+        ];
+        var slider, i;
+        for (i = 0; i < counter.length; i++) {
 
+---->
+ <center><div id="map" style="width:400px;height:340px;"></div></center>
 
-
-        <a href="#home" data-icon="home" data-role="button">Home</a>
     </div>
     <div data-role="footer" data-position="fixed" data-id="fixedFooter" data-theme="b">
             <div data-role="navbar">
@@ -334,6 +345,36 @@
             </div>
     </div>
 </div>
+
+<script type="text/javascript">
+    function initialize(){
+      var marcadores = [
+        ['346', 43.502021,-80.556103],
+        ['347', 43.47526,-80.58343],
+        ['348', 43.512023,-80.556105]
+      ];
+      var map = new google.maps.Map(document.getElementById('map'), {
+        zoom: 13,
+        center: new google.maps.LatLng(43.502021,-80.556103),
+        mapTypeId: google.maps.MapTypeId.ROADMAP
+      });
+      var infowindow = new google.maps.InfoWindow();
+      var marker, i;
+      for (i = 0; i < marcadores.length; i++) {
+        marker = new google.maps.Marker({
+          position: new google.maps.LatLng(marcadores[i][1], marcadores[i][2]),
+          map: map
+        });
+        google.maps.event.addListener(marker, 'click', (function(marker, i) {
+          return function() {
+            infowindow.setContent(marcadores[i][0]);
+            infowindow.open(map, marker);
+          }
+        })(marker, i));
+      }
+    }
+    google.maps.event.addDomListener(window, 'load', initialize);
+    </script>
 
 </body>
 </html>
