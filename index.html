@@ -7,12 +7,12 @@
     <link rel="stylesheet" style="text/css" href="http://code.jquery.com/mobile/1.3.0/jquery.mobile-1.3.0.min.css"/>
     <link rel="stylesheet" href="style/main.css"/>
 
-    <script src="http://maps.googleapis.com/maps/api/js"></script>
+    <script src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
 
-    <script src="phonegap.js"></script>
+    <!--script src="phonegap.js"></script-->
 	<script src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
 	<script src="http://code.jquery.com/mobile/1.3.0/jquery.mobile-1.3.0.min.js"></script>
-    <script type="text/javascript" src="lib/.ui.min.js"></script>
+    <!--script type="text/javascript" src="lib/.ui.min.js"></script-->
     <!------=========================================================================---->
 
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
@@ -60,7 +60,7 @@
                     <li><a href="#house1" id="one" data-transition="slide" onclick="Slider();">
                           <img src="images/house1.jpg/" alt="House1"></img>
                           <h3><b>$478.500</b></h3>
-                            <p class="about">346 Northlake Drive </br>Waterloo, ON N1V 2R9 </p>
+                            <p class="about">346 Northlake Drive</br>Waterloo, ON N1V 2R9 </p>
                         </a>
 
                     </li>
@@ -79,13 +79,13 @@
                     <li id="four"><a href="#house4" data-transition="slide" onclick="Slider();">
                           <img src="images/house4.jpg" alt="House4"></img>
                           <h3><b>$669,000.00</b></h3>
-                            <p class="about">288 FERNDALE Place,</br>Waterloo, ON N2J 3X9</p>
+                            <p class="about">288 FERNDALE Place</br>Waterloo, ON N2J 3X9</p>
                         </a>
                     </li>
                     <li id="five"><a href="#house5" data-transition="slide" onclick="Slider();">
                           <img src="images/house5.jpg" alt="House5"></img>
                           <h3><b>$359,900.000</b></h3>
-                            <p class="about">141 Elgin Crescent,</br>Waterloo, ON N2J 2S5 </p>
+                            <p class="about">141 Elgin Crescent</br>Waterloo, ON N2J 2S5 </p>
                         </a>
                     </li>
                 </ul>
@@ -95,7 +95,7 @@
             <div data-role="navbar">
                 <ul>
                     <li><a href="#home" data-icon="home">Home</a></li>
-                    <li><a href="location.html" data-icon="info">Location</a></li>
+                    <li><a href="#location" data-icon="info">Location</a></li>
 
                 </ul>
             </div>
@@ -135,7 +135,7 @@
         <div data-role="navbar">
             <ul>
                 <li><a href="#home" data-icon="home">Home</a></li>
-                <li><a href="location.html" data-icon="info">Location</a></li>
+                <li><a href="#location" data-icon="info">Location</a></li>
             </ul>
         </div>
     </div>
@@ -171,7 +171,7 @@
         <div data-role="navbar">
             <ul>
                 <li><a href="#home" data-icon="home">Home</a></li>
-                <li><a href="location.html" data-icon="info">Location</a></li>
+                <li><a href="#location" data-icon="info">Location</a></li>
             </ul>
         </div>
     </div>
@@ -207,7 +207,7 @@
         <div data-role="navbar">
             <ul>
                 <li><a href="#home" data-icon="home">Home</a></li>
-                <li><a href="location.html" data-icon="info">Location</a></li>
+                <li><a href="#location" data-icon="info">Location</a></li>
             </ul>
         </div>
     </div>
@@ -243,7 +243,7 @@
         <div data-role="navbar">
             <ul>
                 <li><a href="#home" data-icon="home">Home</a></li>
-                <li><a href="location.html" data-icon="info">Location</a></li>
+                <li><a href="#location" data-icon="info">Location</a></li>
             </ul>
         </div>
     </div>
@@ -279,13 +279,11 @@
         <div data-role="navbar">
             <ul>
                 <li><a href="#home" data-icon="home">Home</a></li>
-                <li><a href="location.html" data-icon="info">Location</a></li>
+                <li><a href="#location" data-icon="info">Location</a></li>
             </ul>
         </div>
     </div>
 </div>
-
-
 
 
 <!-- ====================== Info Page ================================================-->
@@ -349,12 +347,14 @@ var counter=[
 <script type="text/javascript">
     function initialize(){
       var marcadores = [
-        ['346', 43.502021,-80.556103],
-        ['347', 43.47526,-80.58343],
-        ['348', 43.512023,-80.556105]
+        ['346 Northlake Drive', 43.502021,-80.556103],
+        ['626 Red Pine Drive', 43.500628,-80.558541],
+        ['531 Buckingham Boulevard', 43.457874,-80.571784],
+        ['288 Ferndale Place', 43.484165,-80.512299],
+        ['141 Elgin Crescent', 43.473623,-80.519088]
       ];
       var map = new google.maps.Map(document.getElementById('map'), {
-        zoom: 13,
+        zoom: 18,
         center: new google.maps.LatLng(43.502021,-80.556103),
         mapTypeId: google.maps.MapTypeId.ROADMAP
       });
