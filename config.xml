@@ -5,7 +5,7 @@
         xmlns:gap = "http://phonegap.com/ns/1.0"
         id        = "com.phonegap.helloworld"
         versionCode= "2"
-		version   = "0.0.1">
+		version   = "0.0.4">
     <name>RealEstateGuide</name>
     <description>
         This app allow us to search for the perfect house and price in thw region.
