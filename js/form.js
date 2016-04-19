@@ -1,4 +1,4 @@
-var app = angular.module("myapp", [
+/*var app = angular.module("myapp", [
     'mobile-angular-ui',
 
 
@@ -43,3 +43,4 @@ app.controller("mycontroller", function ($scope, uiGmapGoogleMapApi) {
 
 
 });
+*/
