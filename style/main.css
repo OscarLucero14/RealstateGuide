@@ -43,8 +43,8 @@ img.ui-li-thumb{
 
 }
 #map-page, #map-canvas {
-    width: 100%;
-    height: 100%;
+    width: 90%;
+    height: 95%;
     padding: 0;
 }
 .gMap{
@@ -103,7 +103,7 @@ body{
 .slider2 img{
     width:500px;
     height:333px;
-    display:none;
+    display:inline;
 }
 
 .slider3{
@@ -115,7 +115,7 @@ body{
 .slider3 img{
     width:500px;
     height:333px;
-    display:none;
+    display:inline;
 }
 .slider4{
     width:500px;
@@ -126,7 +126,7 @@ body{
 .slider4 img{
     width:500px;
     height:333px;
-    display:none;
+    display:inline;
 }
 .slider5{
     width:500px;
@@ -137,7 +137,7 @@ body{
 .slider5 img{
     width:500px;
     height:333px;
-    display:none;
+    display:inline;
 }
 
 
